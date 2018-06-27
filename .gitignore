@@ -1,1 +1,9 @@
-#no gitignore
+/.DS_Store
+/.tmp
+/node_modules
+/reports
+npm-debug.log
+/tasks/output
+/.vscode
+npm-debug.log
+npm-debug
