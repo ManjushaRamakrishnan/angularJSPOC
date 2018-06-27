@@ -1,0 +1,14 @@
+{
+  "name": "AngularJSPOC",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A sample AngularJS POC",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "update-deps": "npm update",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1 ./app"
+  }
+}
