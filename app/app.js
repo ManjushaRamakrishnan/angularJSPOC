@@ -29,21 +29,23 @@ redirectURLApp.config(function($routeProvider) {
 
 });
 
-redirectURLApp.controller('NavigationController', function($scope, $route) {  
+redirectURLApp.controller('NavigationController', function($scope, $route, $cookies, $location) {  
     $scope.activeTab = '';
+    console.log("Angular 1 >> " + $location.search().name + " >> " + $location.search().data);
     if(window.location.href.indexOf('billing')>0) {
         $scope.activeTab = 'billing';
     }
     else if(window.location.href.indexOf('services')>0) {
         $scope.activeTab = 'services';
     }
+    $cookies.name = "Angular";
+    $cookies.data = "Sample data";
 });
 
 redirectURLApp.controller('NavController', function($scope, $route, $cookies, $location) {
-    console.log("yes");
     $scope.template = "";
     if($location.path() === "/overview"){
-    window.location.href = "http://localhost:4200/overview";
+        window.location.href = "http://localhost:4200/#/overview?" + ($cookies.name && "name=" + $cookies.name) + ($cookies.data && "&data=" + $cookies.data);
     } else {
         $scope.template = "Invalid route";
     }
