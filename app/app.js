@@ -1,26 +1,20 @@
-// 'use strict';
-
-// // Declare app level module which depends on views, and components
-// angular.module('myApp', [
-//   'ngRoute',
-//   'myApp.view1',
-//   'myApp.view2',
-//   'myApp.version'
-// ]).
-// config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-//   $locationProvider.hashPrefix('!');
-
-//   $routeProvider.otherwise({redirectTo: '/view1'});
-// }]);
-
 var redirectURLApp = angular.module('redirectURLApp', ['ngRoute','ngCookies']);
 redirectURLApp.config(function($routeProvider) {
     $routeProvider
     .when("/billing",{
-        template: "Welcome to Billing Tab"
+        templateUrl: "./templates/billing.html"
     })
     .when("/services", {
-        template: "Welcome to Services Tab",
+        templateUrl: "./templates/services.html"
+    })
+    .when("/profile", {
+        templateUrl: "./templates/profile.html"
+    })
+    .when("/interactions", {
+        templateUrl: "./templates/interactions.html"
+    })
+    .when("/actions-offers", {
+        templateUrl: "./templates/actions-offers.html"
     })
     .otherwise({
         template: "{{template}}",
@@ -38,14 +32,23 @@ redirectURLApp.controller('NavigationController', function($scope, $route, $cook
     else if(window.location.href.indexOf('services')>0) {
         $scope.activeTab = 'services';
     }
-    $cookies.name = "Angular";
-    $cookies.data = "Sample data";
+    else if(window.location.href.indexOf('profile')>0) {
+        $scope.activeTab = 'profile';
+    }
+    else if(window.location.href.indexOf('interactions')>0) {
+        $scope.activeTab = 'interactions';
+    }
+    else if(window.location.href.indexOf('actions-offers')>0) {
+        $scope.activeTab = 'actions-offers';
+    }
+    $cookies.ban = "12345678912";
+    $cookies.legacy = "true";
 });
 
 redirectURLApp.controller('NavController', function($scope, $route, $cookies, $location) {
     $scope.template = "";
     if($location.path() === "/overview"){
-        window.location.href = "http://localhost:4200/#/overview?" + ($cookies.name && "name=" + $cookies.name) + ($cookies.data && "&data=" + $cookies.data);
+        window.location.href = "http://localhost:4200/#/overview?" + ($cookies.ban && "ban=" + $cookies.ban) + ($cookies.legacy && "&legacy=" + (!$cookies.legacy));
     } else {
         $scope.template = "Invalid route";
     }

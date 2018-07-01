@@ -1,0 +1,51 @@
+.total-container {
+  border-bottom: 2px solid lightgray;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.total-container .header {
+  height: 100px;
+}
+.total-container .header .navbar-default {
+  background-color: transparent;
+  border: transparent;
+}
+.total-container .header .navbar-default .navbar-header {
+  width: 30%;
+}
+.total-container .header .navbar-default .navbar-header .navbar-brand {
+  width: 100%;
+}
+.total-container .header .navbar-default .navbar-header .navbar-brand .customer-details {
+  font-size: 12px;
+  display: inline-block;
+}
+.total-container .header .navbar-default .navbar-header .navbar-brand .customer-details .customer-level {
+  border-right: 1px solid lightgray;
+  padding-right: 3%;
+}
+.total-container .header .navbar-default .navbar-header .navbar-brand .customer-details .customer-accno {
+  padding-left: 3%;
+}
+.total-container .header .navbar-default .navbar-header .navbar-brand > span {
+  float: right;
+}
+.total-container .header .navbar-default .navbar-nav {
+  width: 70%;
+  border-left: 1px solid lightgray;
+  margin-top: 1%;
+  padding-bottom: 1%;
+}
+.total-container .header .navbar-default .navbar-nav li:nth-child(1) {
+  padding-left: 3%;
+}
+.total-container .header .navbar-default .navbar-nav li a.active {
+  border-bottom: 2px solid red;
+  color: red;
+  padding-bottom: 10%;
+}
+.total-container .header .navbar-default .navbar-nav li a:hover {
+  color: red;
+}
+
+/*# sourceMappingURL=app.css.map */

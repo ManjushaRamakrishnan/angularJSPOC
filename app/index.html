@@ -7,18 +7,42 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <script src="https://use.fontawesome.com/f5e454fb7a.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="container-fluid total-container">
+  <div class="header">
   <nav class="navbar navbar-default" ng-controller="NavigationController">
     <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">Daenerys Stormborn
+            <div class="customer-details">
+              <div class="customer-acc-details">
+                <span class="customer-level">L1</span>
+                <span class="customer-accno">12345678912</span>
+              </div>
+              <div class="customer-addr">
+                394 Dragonstone Dr. Blackwater Bay, SK
+              </div>
+            </div>
+            <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </div>
+        </div>
       <ul class="nav navbar-nav">
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#billing" ng-click="activeTab = 'billing'" ng-class="{'active': activeTab === 'billing'}">Billing and Payment</a></li>
-        <li><a href="#services" ng-click="activeTab = 'services'" ng-class="{'active': activeTab === 'services'}">Services</a></li>
+        <li><a href="#billing" ng-click="activeTab = 'billing'" ng-class="{'active': activeTab === 'billing'}">Billing & Payment</a></li>
+        <li><a href="#services" ng-click="activeTab = 'services'" ng-class="{'active': activeTab === 'services'}"> My Services</a></li>
+        <li><a href="#profile" ng-click="activeTab = 'profile'" ng-class="{'active': activeTab === 'profile'}"> Profile</a></li>
+        <li><a href="#interactions" ng-click="activeTab = 'interactions'" ng-class="{'active': activeTab === 'interactions'}"> Interactions</a></li>
+        <li><a href="#actions-offers" ng-click="activeTab = 'actions-offers'" ng-class="{'active': activeTab === 'actions-offers'}"> Actions & Offers</a></li>
       </ul>
     </div>
   </nav>
+  </div>
+  </div>
     <ng-view></ng-view>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>

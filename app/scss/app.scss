@@ -1,0 +1,53 @@
+.total-container {
+    border-bottom:2px solid lightgray;
+    padding-left: 5%;
+    padding-right: 5%;
+    .header {
+        height: 100px;
+        .navbar-default {
+            background-color: transparent;
+            border: transparent;
+            .navbar-header {
+                width: 30%;
+                .navbar-brand {
+                    width: 100%;
+                    .customer-details {
+                        font-size: 12px;
+                        display: inline-block;
+                        .customer-level {
+                            border-right: 1px solid lightgray;
+                            padding-right: 3%;
+                        }
+                        .customer-accno {
+                            padding-left: 3%;
+                        }
+                    }
+                    &>span {
+                        float: right;
+                    }
+                }
+            }
+            .navbar-nav {
+                width: 70%;
+                border-left: 1px solid lightgray;
+                margin-top: 1%;
+                padding-bottom: 1%;
+                li {
+                    &:nth-child(1) {
+                        padding-left: 3%;
+                    }
+                    a{
+                        &.active {
+                            border-bottom:2px solid red;
+                            color: red;
+                            padding-bottom: 10%;
+                        }
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
